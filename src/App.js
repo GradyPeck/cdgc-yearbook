@@ -11,7 +11,7 @@ console.log(members);
 
 function App() {
   let membs = [];
-  //Note this is a for IN loop - it's giving you indices
+  //Note this is a for IN loop - it's giving you indices, not the members themselves
   for (let membdex in members) {
     members[membdex].key = membdex;
     let newmemb = React.createElement(Member, members[membdex]);
@@ -22,10 +22,13 @@ function App() {
 
 class Member extends React.Component {
   render() {
+    let aspects = [];
+    for (let aspect in this.props) {
+      let newaspect = React.createElement("p", {key: aspect, className: "entryline " + aspect}, this.props[aspect]);
+      aspects.push(newaspect);
+    }
     return (
-      <div>
-        <h1>Name: {this.props["First Name"]}</h1>
-      </div>
+      React.createElement("div", {className: "entry"}, aspects)
     );
   }
 }
