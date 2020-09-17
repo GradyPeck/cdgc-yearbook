@@ -22,13 +22,13 @@ function App() {
 
 class Member extends React.Component {
   render() {
-    let aspects = [];
-    for (let aspect in this.props) {
-      let newaspect = React.createElement("p", {key: aspect, className: "entryline " + aspect}, this.props[aspect]);
-      aspects.push(newaspect);
-    }
     return (
-      React.createElement("div", {className: "entry"}, aspects)
+      <div className="entry">
+        <h2>{this.props["First Name"] + " " + this.props["Last Name"]}</h2>
+        <h4>{this.props["Street Address"]}</h4>
+        <h4>{this.props["City"] + ", " + this.props["State"]}</h4>
+        <h4>{this.props["Zip"]}</h4>
+      </div>
     );
   }
 }

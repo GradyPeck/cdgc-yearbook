@@ -1,3 +1,12 @@
 .entry {
-    border: solid 1px red;
+    border: solid 1px black;
+    padding: 20px;
+}
+
+.entry h4 {
+    margin: 0px;
+}
+
+.entry h2 {
+    margin-top: 0px;
 }
